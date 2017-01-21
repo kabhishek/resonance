@@ -8,15 +8,6 @@ public class NPC_Spawner : MonoBehaviour {
 
      private List<GameObject> spawnedNPCs = new List<GameObject>();
 
-     // Use this for initialization
-	private void Start () {
-	
-	}
-	
-	// Update is called once per frame
-     private void Update () {
-	}
-
      public void Spawn()
      {
           Vector2 spawnPositionInViewPort = new Vector2 (1, Random.Range (0.0f, 1.0f));
