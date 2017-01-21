@@ -10,16 +10,20 @@ public class Movement : MonoBehaviour {
      public float speed = 20f;
      float amplitudeX = 10.0f;
      float amplitudeY = 1.0f;
-     int omegaX;
+     float omegaX;
      float omegaY = 1.0f;
      float index;
+	float startY;
+
 
 	// Use this for initialization
 	void Start () {
 			
  		rb = gameObject.GetComponent<Rigidbody2D> ();
 		NPC npc = gameObject.GetComponent<NPC> ();
-		omegaX = npc.omega;
+		omegaY = npc.omega;
+		startY = transform.position.y;
+
 	}
 	
 	// Update is called once per frame
@@ -32,7 +36,8 @@ public class Movement : MonoBehaviour {
           theta += thetaStep;
           float localX = transform.position.x;
 		  localX -= Time.fixedDeltaTime /* speed*/;
-          //float localY = transform.position.y;
+
+		//float localY = transform.position.y;
           //thetaStep *= Time.fixedDeltaTime;
 //          localY += Mathf.Sin (theta) * speed;
           //transform.position = new Vector2 (localX, localY);
@@ -52,6 +57,6 @@ public class Movement : MonoBehaviour {
           //float x = amplitudeX*Mathf.Cos (omegaX*index);
           float y = amplitudeY * Mathf.Sin (omegaY * index);
           //wave_trail//transform.position= new Vector3(localX,transform.position.y);
-		transform.position= new Vector3(localX,y) * speed;
+		transform.position= new Vector3(localX * speed, y + startY) * speed;//+ transform.position.y
      }
 }
