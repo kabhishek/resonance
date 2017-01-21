@@ -29,10 +29,10 @@ public class Movement : MonoBehaviour {
      {
           theta += thetaStep;
           float localX = transform.position.x;
-		  localX += Time.fixedDeltaTime /* speed*/;
+		  localX -= Time.fixedDeltaTime /* speed*/;
           //float localY = transform.position.y;
           //thetaStep *= Time.fixedDeltaTime;
-          //localY += Mathf.Sin (theta) * speed;
+//          localY += Mathf.Sin (theta) * speed;
           //transform.position = new Vector2 (localX, localY);
 
 
@@ -50,6 +50,6 @@ public class Movement : MonoBehaviour {
           //float x = amplitudeX*Mathf.Cos (omegaX*index);
           float y = amplitudeY * Mathf.Sin (omegaY * index);
           //wave_trail//transform.position= new Vector3(localX,transform.position.y);
-          transform.position= new Vector3(localX,y) * speed;
+		transform.position= new Vector3(localX,y) * speed;
      }
 }
