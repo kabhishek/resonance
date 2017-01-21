@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class playerMovement : MonoBehaviour/*, IMovement*/ {
 
 	public float speed;
-//	public Action  
+	public GameObject canvasStory;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +22,13 @@ public class playerMovement : MonoBehaviour/*, IMovement*/ {
 		} else if (Input.GetKey (KeyCode.DownArrow) || Input.GetKey (KeyCode.S)) {
 			// Particle goes down
 			transform.Translate (-Vector2.up * speed * Time.deltaTime);
+		}
+
+		// THIS IS A TEST. REMOVE WHEN ADDED TO COLLIDER
+		if (Input.GetKey (KeyCode.B)) {
+			
+			canvasStory.SetActive(true);
+			GameObject.FindGameObjectWithTag ("StoryText").GetComponent<Text> ().text = "Lalal";
 		}
 	}
 }

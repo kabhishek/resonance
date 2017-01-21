@@ -52,4 +52,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcPrefab: {fileID: 1288411339611158, guid: 0298ee8eb1af446edb030a30c408a4ef, type: 2}
+  spawnTimeDelayMin: 1
   spawnTimeDelayMax: 5
