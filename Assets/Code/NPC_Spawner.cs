@@ -20,7 +20,7 @@ public class NPC_Spawner : MonoBehaviour {
 
 	public void Spawn()
 	{
-		Vector2 spawnPositionInViewPort = new Vector2 (1.1f, Random.Range (0.0f, 1.0f));
+		Vector2 spawnPositionInViewPort = new Vector2 (1.1f, Random.Range (0.25f, 0.75f));
 		Debug.Log ("Spawn Viewport Pos " + spawnPositionInViewPort);
 	  	Vector2 spawnPositionInWorld = Camera.main.ViewportToWorldPoint (spawnPositionInViewPort);
 		Debug.Log ("Spawn World Pos" + spawnPositionInWorld);
