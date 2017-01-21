@@ -10,14 +10,16 @@ public class Movement : MonoBehaviour {
      public float speed = 20f;
      float amplitudeX = 10.0f;
      float amplitudeY = 1.0f;
-     float omegaX = 1.0f;
+     int omegaX;
      float omegaY = 1.0f;
      float index;
+
 	// Use this for initialization
 	void Start () {
-
-          rb = gameObject.GetComponent<Rigidbody2D> ();
-
+			
+ 		rb = gameObject.GetComponent<Rigidbody2D> ();
+		NPC npc = gameObject.GetComponent<NPC> ();
+		omegaX = npc.omega;
 	}
 	
 	// Update is called once per frame

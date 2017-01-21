@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class playerMovement : MonoBehaviour {
+public class playerMovement : MonoBehaviour/*, IMovement*/ {
 
 	public float speed;
+//	public Action  
 
 	// Use this for initialization
 	void Start () {

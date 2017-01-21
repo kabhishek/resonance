@@ -23,6 +23,9 @@ public class NPC_Spawner : MonoBehaviour {
 		Vector2 spawnPositionInViewPort = new Vector2 (1, Random.Range (0.0f, 1.0f));
 	  	Vector2 spawnPositionInWorld = Camera.main.ViewportToWorldPoint (spawnPositionInViewPort);
 	  	GameObject local = GameObject.Instantiate<GameObject> (npcPrefab, spawnPositionInWorld, Quaternion.identity);
+		NPC npc = local.GetComponent<NPC> ();
+		int[] omegas = new int[] { 1, 3, -1, -3, 0};
+		npc.omega = omegas[Random.Range(0, omegas.Length - 1)];
 		TrailRenderer tr = local.GetComponent<TrailRenderer> ();
 		tr.sortingLayerName = "Gameplay";
 	  	spawnedNPCs.Add (local);

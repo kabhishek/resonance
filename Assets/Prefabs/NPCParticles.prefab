@@ -38,6 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4430253439332332}
   - component: {fileID: 212281989516644356}
+  - component: {fileID: 114867079760398684}
   m_Layer: 0
   m_Name: NPCParticles
   m_TagString: Untagged
@@ -182,6 +183,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+--- !u!114 &114867079760398684
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1774985715894484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f5ead54f9b7474c8a09197c4d3b844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  omega: 0
 --- !u!212 &212281989516644356
 SpriteRenderer:
   m_ObjectHideFlags: 1
