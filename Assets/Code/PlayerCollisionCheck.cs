@@ -13,6 +13,7 @@ public class PlayerCollisionCheck : MonoBehaviour, IWaveInfo {
 	void Update () {
 		
 	}
+
 	private void OnTriggerEnter2D(Collider2D collider2D)
 	{
 		Debug.Log ("Change Wave!!");

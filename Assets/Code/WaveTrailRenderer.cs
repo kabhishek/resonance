@@ -16,19 +16,9 @@ public class WaveTrailRenderer : MonoBehaviour {
 	{
 		lineRenderer.sortingLayerName = "Gameplay";
 	}
-	// Use this for initialization
-	void Start () 
-	{
-//		iWaveInfo = waveInfo.GetComponent<IWaveInfo>();
-//		lineRenderer.SetPositions();
-//		float thetaStep = 2.0f;
-	}
-	
-	// Update is called once per frame
+		
 	void Update () 
 	{
-//		iWaveInfo.WavePoints;		
-//		lineRenderer.SetPositions(new [] { new Vector3(0,0), new Vector3(1,1), new Vector3(2,2) });
 		UpdatePositions();
 	}
 
@@ -44,11 +34,8 @@ public class WaveTrailRenderer : MonoBehaviour {
 		{
 			float y = amplitudeY * Mathf.Sin (curveStep * index);
 			index += Time.fixedDeltaTime;
-			//float y = 0;
 			curvePositions[i] = new Vector3(x, y) + transform.position;
-			//			lineRenderer.SetPosition (i, curvePositions [i]);
 			x -= Time.deltaTime * factor;
-			//curveStep += curveStep;
 		}
 		lineRenderer.SetPositions (curvePositions);
 
