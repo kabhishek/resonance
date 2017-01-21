@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour {
      private Rigidbody2D rb;
      private float theta = 0f;
      private float thetaStep = 0.5f;
-     public float speed = 0.01f;
+     public float speed = 20f;
      float amplitudeX = 10.0f;
      float amplitudeY = 1.0f;
      float omegaX = 1.0f;
@@ -29,7 +29,7 @@ public class Movement : MonoBehaviour {
      {
           theta += thetaStep;
           float localX = transform.position.x;
-          localX -= Time.fixedDeltaTime;
+		  localX += Time.fixedDeltaTime /* speed*/;
           //float localY = transform.position.y;
           //thetaStep *= Time.fixedDeltaTime;
           //localY += Mathf.Sin (theta) * speed;
@@ -45,11 +45,11 @@ public class Movement : MonoBehaviour {
 
 
 
+		  index += Time.fixedDeltaTime;
 
-          index += Time.fixedDeltaTime;
           //float x = amplitudeX*Mathf.Cos (omegaX*index);
-          //float y = amplitudeY * Mathf.Sin (omegaY*index);
-          transform.position= new Vector3(localX,transform.position.y);
-          //transform.position= new Vector3(localX,y) * speed;
+          float y = amplitudeY * Mathf.Sin (omegaY * index);
+          //wave_trail//transform.position= new Vector3(localX,transform.position.y);
+          transform.position= new Vector3(localX,y) * speed;
      }
 }
