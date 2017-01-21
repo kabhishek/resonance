@@ -17,6 +17,9 @@ public class PlayerCollisionCheck : MonoBehaviour, IWaveInfo {
 	private void OnTriggerEnter2D(Collider2D collider2D)
 	{
 		Debug.Log ("Change Wave!!");
+		float omega = collider2D.gameObject.GetComponent<NPC>().omega;
+		gameObject.GetComponentInChildren<WaveTrailRenderer> ().curveStep = omega * -10.0f;
+		collider2D.gameObject.SetActive (false);
 	}
 
 	public List<float> WavePoints

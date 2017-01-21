@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e08959a7d279849a97beca57764e29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 100
   canvasStory: {fileID: 0}
 --- !u!114 &114364506016034052
 MonoBehaviour:
