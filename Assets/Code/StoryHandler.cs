@@ -46,7 +46,7 @@ public class StoryHandler : MonoBehaviour {
 			canvasStory.SetActive (true);
 			GameObject.FindGameObjectWithTag ("StoryText").GetComponent<Text> ().text = story;
 		}
-		UpdateEnvironment (state);
+		UpdateEnvironment (playerState);
 	}
 
 	private void OnDestroy()
@@ -54,22 +54,32 @@ public class StoryHandler : MonoBehaviour {
 		stateHandler.updateStateEvent.RemoveListener (UpdateStory);
 	}
 
-	void UpdateEnvironment(float state)
+	void UpdateEnvironment(PlayerState playerState)
 	{
-		switch ((int)state) 
+		switch (playerState) 
 		{
-			case 10:
-			case -10:
-				ColorUtility.TryParseHtmlString ("#48489AFF", out bgColor);
-				break;
-			case 30:
-			case -30:
-				ColorUtility.TryParseHtmlString ("#B82727FF", out bgColor);
-				break;
-			default:
+			case PlayerState.Beginnings:
 				ColorUtility.TryParseHtmlString ("#424242FF", out bgColor);
 				break;
+			case PlayerState.Lonely:
+				ColorUtility.TryParseHtmlString ("#424242FF", out bgColor);
+				break;
+			case PlayerState.Exploring:
+				ColorUtility.TryParseHtmlString ("#FFFFFFFF", out bgColor);
+				break;
+			case PlayerState.Calm:
+				ColorUtility.TryParseHtmlString ("#48489AFF", out bgColor);
+				break;
+			case PlayerState.Disturbed:
+				ColorUtility.TryParseHtmlString ("#B82727FF", out bgColor);
+				break;
+			case PlayerState.AnEnd:
+				ColorUtility.TryParseHtmlString ("#424242FF", out bgColor);
+				break;
+			default:
+				break;
 		}
+
 		GameObject.Find ("Background").GetComponent<SpriteRenderer> ().color = bgColor;
 		GameObject.Find("Background(Clone)").GetComponent<SpriteRenderer> ().color = bgColor;
 	}
