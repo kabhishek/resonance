@@ -7,7 +7,9 @@ public class StoryHandler : MonoBehaviour {
 
 	[SerializeField] private StateHandler stateHandler;
 	[SerializeField] private GameObject canvasStory;
+
 	private Color bgColor;
+	private Color particleColor;
 
 	// Use this for initialization
 	void Awake ()
@@ -17,6 +19,7 @@ public class StoryHandler : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		bgColor = new Color ();
+		particleColor = new Color ();
 	}
 	
 	// Update is called once per frame
@@ -58,29 +61,38 @@ public class StoryHandler : MonoBehaviour {
 	{
 		switch (playerState) 
 		{
-			case PlayerState.Beginnings:
-				ColorUtility.TryParseHtmlString ("#424242FF", out bgColor);
-				break;
-			case PlayerState.Lonely:
-				ColorUtility.TryParseHtmlString ("#424242FF", out bgColor);
-				break;
-			case PlayerState.Exploring:
-				ColorUtility.TryParseHtmlString ("#FFFFFFFF", out bgColor);
-				break;
-			case PlayerState.Calm:
-				ColorUtility.TryParseHtmlString ("#48489AFF", out bgColor);
-				break;
-			case PlayerState.Disturbed:
-				ColorUtility.TryParseHtmlString ("#B82727FF", out bgColor);
-				break;
-			case PlayerState.AnEnd:
-				ColorUtility.TryParseHtmlString ("#424242FF", out bgColor);
-				break;
-			default:
-				break;
+		case PlayerState.Beginnings:
+			ColorUtility.TryParseHtmlString ("#424242FF", out bgColor);
+			ColorUtility.TryParseHtmlString ("#FFFFFFFF", out particleColor);
+			break;
+		case PlayerState.Lonely:
+			ColorUtility.TryParseHtmlString ("#424242FF", out bgColor);
+			ColorUtility.TryParseHtmlString ("#FFFFFFFF", out particleColor);
+			break;
+		case PlayerState.Exploring:
+			ColorUtility.TryParseHtmlString ("#FFFFFFFF", out bgColor);
+			ColorUtility.TryParseHtmlString ("#000000FF", out particleColor);
+			break;
+		case PlayerState.Calm:
+			ColorUtility.TryParseHtmlString ("#48489AFF", out bgColor);
+			ColorUtility.TryParseHtmlString ("#FFFFFFFF", out particleColor);
+			break;
+		case PlayerState.Disturbed:
+			ColorUtility.TryParseHtmlString ("#B82727FF", out bgColor);
+			ColorUtility.TryParseHtmlString ("#FFFFFFFF", out particleColor);
+			break;
+		case PlayerState.AnEnd:
+			ColorUtility.TryParseHtmlString ("#424242FF", out bgColor);
+			ColorUtility.TryParseHtmlString ("#FFFFFFFF", out particleColor);
+			break;
+		default:
+			ColorUtility.TryParseHtmlString ("#FFFFFFFF", out bgColor);
+			ColorUtility.TryParseHtmlString ("#000000FF", out particleColor);
+			break;
 		}
 
 		GameObject.Find ("Background").GetComponent<SpriteRenderer> ().color = bgColor;
 		GameObject.Find("Background(Clone)").GetComponent<SpriteRenderer> ().color = bgColor;
+		GameObject.Find("Particle").GetComponent<SpriteRenderer>().color = particleColor;
 	}
 }
