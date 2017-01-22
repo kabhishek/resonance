@@ -24,7 +24,7 @@ public class StoryHandler : MonoBehaviour {
 		
 	}
 
-	private void UpdateStory(PlayerState playerState, PlayerState previousState, float state)
+	private void UpdateStory(PlayerState playerState, PlayerState previousState)
 	{
 		Debug.Log ("PlayerState " + playerState);
 		string story = string.Empty;
@@ -33,6 +33,21 @@ public class StoryHandler : MonoBehaviour {
 			case PlayerState.Beginnings:	
 			{
 				story = "The beginning " + playerState.ToString ();
+			}
+			break;
+		case PlayerState.Exploring:
+			{
+				story = "Explore your world " + playerState.ToString ();
+			}
+			break;
+		case PlayerState.Calm:
+			{
+				story = "Now your are calm " + playerState.ToString ();
+			}
+			break;
+		case PlayerState.Disturbed:
+			{
+				story = "Now you are disturbed " + playerState.ToString ();
 			}
 			break;
 		case PlayerState.AnEnd:
@@ -46,7 +61,7 @@ public class StoryHandler : MonoBehaviour {
 			canvasStory.SetActive (true);
 			GameObject.FindGameObjectWithTag ("StoryText").GetComponent<Text> ().text = story;
 		}
-		UpdateEnvironment (state);
+//		UpdateEnvironment (state);
 	}
 
 	private void OnDestroy()

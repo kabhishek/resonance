@@ -5,4 +5,5 @@ using UnityEngine;
 public class StoryData : MonoBehaviour 
 {
 	public float lonelytime;
+	public int exploreCount;
 }
