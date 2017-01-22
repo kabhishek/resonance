@@ -80,6 +80,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a5080fb587c14dc48f966008b3e7e6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lonelytime: 10
-  exploreCount: 3
+  lonelytime: 20
+  exploreCount: 7
   timeToEnd: 0

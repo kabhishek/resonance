@@ -54,9 +54,9 @@ public class StoryHandler : MonoBehaviour {
 			break;
 		case PlayerState.Calm:
 			{
-				story_possibilities[0] = "There were silhouettes of her conjunction\nto be sketched out\nShe paused to decorate her interval.\n\nThere would be iridescence when she turned around\nAn ornamental lapse would recite\nthe story of her placid travels\n\nAs she swam in tranquil lapse, an uneasiness took over\n\nShe had come too far without an emotion\n\nAll she desired, was a frantic another";
-				story_possibilities [1] = "There were silhouettes of her conjunction\nto be sketched out\nShe paused to decorate her interval.\n\nThere would be iridescence when she turned around\nAn ornamental lapse would recite\nthe story of her placid travels\n\nAs she swam in tranquil lapse, an uneasiness took over\n\nShe had come too far without an emotion\n\nAll she desired, was a frantic another";
-				objective = "All she desired, was a frantic another";
+				story_possibilities[0] = "There were silhouettes of her conjunction\nto be sketched out\nShe paused to decorate her interval.\n\nThere would be iridescence when she turned around\nAn ornamental lapse would recite\nthe story of her placid travels\n\nAs she swam in tranquil lapse, an uneasiness took over\n\nShe had come too far without an emotion\nAll she desired, was a frantic endeavour";
+				story_possibilities [1] = "There were silhouettes of her conjunction\nto be sketched out\nShe paused to decorate her interval.\n\nThere would be iridescence when she turned around\nAn ornamental lapse would recite\nthe story of her placid travels\n\nAs she swam in tranquil lapse, an uneasiness took over\n\nShe had come too far without an emotion\nAll she desired, was a frantic endeavour";
+				objective = "All she desired, was a frantic endeavour";
 			}
 			break;
 		case PlayerState.Disturbed:

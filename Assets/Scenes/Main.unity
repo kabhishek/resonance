@@ -130,6 +130,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114873386915905186, guid: 64ce428859ae94c8584b0a999bd60506,
+        type: 2}
+      propertyPath: spawnTimeDelayMax
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64ce428859ae94c8584b0a999bd60506, type: 2}
   m_IsPrefabParent: 0
@@ -340,7 +345,7 @@ Prefab:
     - target: {fileID: 114856369614090700, guid: 3c8d9d776007849c38607d06a53995d6,
         type: 2}
       propertyPath: lonelytime
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3c8d9d776007849c38607d06a53995d6, type: 2}
@@ -839,7 +844,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 15
+    m_FontSize: 25
     m_FontStyle: 2
     m_BestFit: 0
     m_MinSize: 1

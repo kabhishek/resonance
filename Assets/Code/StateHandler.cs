@@ -47,10 +47,17 @@ public class StateHandler : MonoBehaviour
 	private void UpdateState(float omega, IWaveInfo waveInfo)
 	{
 		Debug.Log ("UpdateState");
-		float curveStep = omega * -10.0f;
+		float curveStep = omega * 10.0f;
 //		if (playerState != PlayerState.Beginnings && previousState == playerState)
 //			return;
 		// state handling
+		if (waveInfo != null) {
+			waveInfo.WaveTrailRenderer.curveStep += curveStep;
+			waveInfo.WaveTrailRenderer.curveStep = Mathf.Min (Mathf.Abs(waveInfo.WaveTrailRenderer.curveStep), 40f);
+			Debug.Log ("Curve Step " + waveInfo.WaveTrailRenderer.curveStep);
+			Debug.Log ("omega " + omega);
+			Debug.Log ("Explore Count " + exploringCount);
+		}
 
 		if (playerState == PlayerState.Lonely) 
 		{
@@ -60,7 +67,7 @@ public class StateHandler : MonoBehaviour
 		else if (playerState == PlayerState.Exploring) 
 		{
 			if (waveInfo != null) {
-				waveInfo.WaveTrailRenderer.curveStep = curveStep;
+				waveInfo.WaveTrailRenderer.curveStep += curveStep;
 				Debug.Log ("Curve Step " + waveInfo.WaveTrailRenderer.curveStep);
 				Debug.Log ("omega " + omega);
 				Debug.Log ("Explore Count " + exploringCount);
@@ -70,14 +77,14 @@ public class StateHandler : MonoBehaviour
 				}
 			}
 		} else if (playerState == PlayerState.Calm) {
-			if (Mathf.Abs (omega) >= 3) {
+			if (Mathf.Abs (curveStep) >= 30 && Mathf.Abs(omega) >= 3f) {
 				playerState = PlayerState.Disturbed;
 				updateStateEvent.Invoke (playerState, previousState);
 			}
 		}
 		else if (playerState == PlayerState.Disturbed) 
 		{
-			if (waveInfo.WaveTrailRenderer.curveStep <= 20)
+			if (Mathf.Abs(waveInfo.WaveTrailRenderer.curveStep) == 0)
 			{
 				playerState = PlayerState.AnEnd;
 				updateStateEvent.Invoke (playerState, previousState);
