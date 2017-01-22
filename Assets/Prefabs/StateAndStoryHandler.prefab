@@ -20,8 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4845255247051020}
   - component: {fileID: 114351137614496594}
+  - component: {fileID: 114150628102592652}
+  - component: {fileID: 114856369614090700}
   m_Layer: 0
-  m_Name: StoryHandler
+  m_Name: StateAndStoryHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,6 +42,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114150628102592652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1949417264256028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3e6fab1153a74952806cdaa5a3084e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionInfo: {fileID: 0}
+  storyData: {fileID: 114856369614090700}
 --- !u!114 &114351137614496594
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -51,5 +66,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb736d47bbbcf4afab67d4c481aa064f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCollisionCheck: {fileID: 0}
+  stateHandler: {fileID: 114150628102592652}
+  collisionInfo: {fileID: 0}
   canvasStory: {fileID: 0}
+--- !u!114 &114856369614090700
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1949417264256028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a5080fb587c14dc48f966008b3e7e6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lonelytime: 2

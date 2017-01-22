@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.Events;
 using System;
 
-public class CollisionEvent : UnityEvent<float>
+public class CollisionEvent : UnityEvent<float, IWaveInfo>
 {
 }
 
-public interface ICollisionInfo 
+public interface ICollisionInfo
 {
 	CollisionEvent PlayerCollision
 	{

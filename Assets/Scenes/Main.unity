@@ -255,6 +255,15 @@ Prefab:
       propertyPath: collisionInfo
       value: 
       objectReference: {fileID: 1919030938}
+    - target: {fileID: 1949417264256028, guid: 3c8d9d776007849c38607d06a53995d6, type: 2}
+      propertyPath: m_Name
+      value: StateAndStoryHandler
+      objectReference: {fileID: 0}
+    - target: {fileID: 114150628102592652, guid: 3c8d9d776007849c38607d06a53995d6,
+        type: 2}
+      propertyPath: collisionInfo
+      value: 
+      objectReference: {fileID: 1919030938}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3c8d9d776007849c38607d06a53995d6, type: 2}
   m_IsPrefabParent: 0

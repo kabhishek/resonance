@@ -2,11 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IWaveInfo 
+public class StoryData : MonoBehaviour 
 {
-	WaveTrailRenderer WaveTrailRenderer 
-	{
-		get;
-		set;
-	}
+	public float lonelytime;
 }
