@@ -146,5 +146,7 @@ public class StoryHandler : MonoBehaviour {
 		GameObject.Find ("Background").GetComponent<SpriteRenderer> ().color = bgColor;
 		GameObject.Find("Background(Clone)").GetComponent<SpriteRenderer> ().color = bgColor;
 		GameObject.Find("Particle").GetComponent<SpriteRenderer>().color = particleColor;
+
+		//GameObject.Find("Soundtrack").GetComponent<AudioClip>();
 	}
 }
