@@ -33,30 +33,13 @@ public class Movement : MonoBehaviour {
 
      private void FixedUpdate()
      {
-          theta += thetaStep;
-          float localX = transform.position.x;
-		  localX -= Time.fixedDeltaTime /* speed*/;
+		theta += thetaStep;
+		float localX = transform.position.x;
+		localX -= Time.fixedDeltaTime /* speed*/;
 
-		//float localY = transform.position.y;
-          //thetaStep *= Time.fixedDeltaTime;
-//          localY += Mathf.Sin (theta) * speed;
-          //transform.position = new Vector2 (localX, localY);
+		index += Time.fixedDeltaTime;
 
-
-
-          /*theta += thetaStep;
-          Vector3 referenceVector = new Vector2 (0.01f, 
-               Mathf.Sin (theta) * 0.01f);
-          rb.velocity = referenceVector.normalized * Time.fixedDeltaTime * speed;*/
-          //rb.angularVelocity = 20.0f;
-
-
-
-		  index += Time.fixedDeltaTime;
-
-          //float x = amplitudeX*Mathf.Cos (omegaX*index);
-          float y = amplitudeY * Mathf.Sin (omegaY * index);
-          //wave_trail//transform.position= new Vector3(localX,transform.position.y);
+		float y = amplitudeY * Mathf.Sin (omegaY * index);
 		transform.position= new Vector3(localX * speed, y + startY) * speed;//+ transform.position.y
      }
 }

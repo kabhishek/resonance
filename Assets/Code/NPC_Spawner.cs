@@ -21,9 +21,9 @@ public class NPC_Spawner : MonoBehaviour {
 	public void Spawn()
 	{
 		Vector2 spawnPositionInViewPort = new Vector2 (1.1f, Random.Range (0.25f, 0.75f));
-		Debug.Log ("Spawn Viewport Pos " + spawnPositionInViewPort);
+//		Debug.Log ("Spawn Viewport Pos " + spawnPositionInViewPort);
 	  	Vector2 spawnPositionInWorld = Camera.main.ViewportToWorldPoint (spawnPositionInViewPort);
-		Debug.Log ("Spawn World Pos" + spawnPositionInWorld);
+//		Debug.Log ("Spawn World Pos" + spawnPositionInWorld);
 	  	GameObject local = GameObject.Instantiate<GameObject> (npcPrefab, spawnPositionInWorld, Quaternion.identity);
 		NPC npc = local.GetComponent<NPC> ();
 		int[] omegas = new int[] { 1, 3, -1, -3, 0};
