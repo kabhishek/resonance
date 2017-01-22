@@ -12,8 +12,8 @@ public enum PlayerState
 	AnEnd,
 	Exploring
 }
-// Current state, previous state
-public class UpdateStateEvent : UnityEvent<PlayerState, PlayerState>
+// Current state, previous state, curve step
+public class UpdateStateEvent : UnityEvent<PlayerState, PlayerState, float>
 {
 	
 }
@@ -43,6 +43,7 @@ public class StateHandler : MonoBehaviour
 
 	private void UpdateState(float omega, IWaveInfo waveInfo)
 	{
+		float curveStep = omega * -10.0f;
 		if (playerState != PlayerState.Beginnings && previousState == playerState)
 			return;
 		// state handling
@@ -55,13 +56,13 @@ public class StateHandler : MonoBehaviour
 		{
 			if (waveInfo != null) 
 			{
-				waveInfo.WaveTrailRenderer.curveStep = omega * -10.0f;
+				waveInfo.WaveTrailRenderer.curveStep = curveStep;
 				Debug.Log ("Curve Step " + waveInfo.WaveTrailRenderer.curveStep);
 				Debug.Log ("omega " + omega);
 			}
 		}
 
-		updateStateEvent.Invoke (playerState, previousState);
+		updateStateEvent.Invoke (playerState, previousState, curveStep);
 
 		// Post state handling
 		previousState = playerState;
