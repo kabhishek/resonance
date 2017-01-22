@@ -7,6 +7,7 @@ public class StoryHandler : MonoBehaviour {
 
 	[SerializeField] private StateHandler stateHandler;
 	[SerializeField] private GameObject canvasStory;
+	[SerializeField] private GameObject canvasObjective;
 
 	private Color bgColor;
 	private Color particleColor;
@@ -31,11 +32,14 @@ public class StoryHandler : MonoBehaviour {
 	{
 		Debug.Log ("PlayerState " + playerState);
 		string story = string.Empty;
+		string objective = string.Empty;
+
 		switch (playerState) 
 		{
 			case PlayerState.Beginnings:	
 			{
 				story = "The beginning " + playerState.ToString ();
+				objective = "First objective";
 			}
 			break;
 		case PlayerState.AnEnd:
@@ -44,11 +48,19 @@ public class StoryHandler : MonoBehaviour {
 			}
 			break;
 		}
+
 		if (story != string.Empty) 
 		{
 			canvasStory.SetActive (true);
 			GameObject.FindGameObjectWithTag ("StoryText").GetComponent<Text> ().text = story;
 		}
+
+		if (objective != string.Empty) 
+		{
+			canvasObjective.SetActive (true);
+			GameObject.FindGameObjectWithTag("ObjectiveText").GetComponent<Text> ().text = objective;
+		}
+
 		UpdateEnvironment (playerState);
 	}
 
