@@ -25,5 +25,9 @@ public class StoryHandler : MonoBehaviour {
 		canvasStory.SetActive(true);
 		GameObject.FindGameObjectWithTag ("StoryText").GetComponent<Text> ().text = "These are cautiously pleated waves \n of us, of you.\n Shall we? \nas we resonate.";
 	}
-		
+
+	private void OnDestroy()
+	{
+		iCollisionInfo.PlayerCollision.RemoveListener (UpdateStory);
+	}
 }
