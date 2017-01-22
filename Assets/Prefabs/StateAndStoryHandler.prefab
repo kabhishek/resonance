@@ -81,5 +81,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lonelytime: 20
-  exploreCount: 7
+  exploreCount: 5
   timeToEnd: 0
