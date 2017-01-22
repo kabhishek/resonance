@@ -23,7 +23,7 @@ public class StoryHandler : MonoBehaviour {
 	{
 		Debug.Log ("Story " + state);
 		canvasStory.SetActive(true);
-		GameObject.FindGameObjectWithTag ("StoryText").GetComponent<Text> ().text = "Lalal";
+		GameObject.FindGameObjectWithTag ("StoryText").GetComponent<Text> ().text = "These are cautiously pleated waves \n of us, of you.\n Shall we? \nas we resonate.";
 	}
 		
 }

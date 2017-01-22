@@ -12,7 +12,8 @@ public class bgMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		backgroundSize = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
+		// temp fix for bg scroll gap issue
+		backgroundSize = gameObject.GetComponent<SpriteRenderer>().bounds.size.x - 1;
 
 		duplicateStartPosition = new Vector3(backgroundSize, transform.position.y, transform.position.z);
 		if (GameObject.FindGameObjectsWithTag ("Background").Length < 2) {
