@@ -7,6 +7,7 @@ public enum PlayerState
 {
 	Beginnings,
 	Lonely,
+	LonelyEnd,
 	Disturbed,
 	Calm,
 	AnEnd,
@@ -29,6 +30,7 @@ public class StateHandler : MonoBehaviour
 
 	private float lonelyStatetimer;
 	private int exploringCount;
+	private float endTimer;
 
 	private void Awake () 
 	{
@@ -50,9 +52,13 @@ public class StateHandler : MonoBehaviour
 //			return;
 		// state handling
 
-		if (playerState == PlayerState.Lonely) {
-			playerState = PlayerState.AnEnd;
-		} else if (playerState == PlayerState.Exploring) {
+		if (playerState == PlayerState.Lonely) 
+		{
+			playerState = PlayerState.LonelyEnd;
+			updateStateEvent.Invoke (playerState, previousState);
+		} 
+		else if (playerState == PlayerState.Exploring) 
+		{
 			if (waveInfo != null) {
 				waveInfo.WaveTrailRenderer.curveStep = curveStep;
 				Debug.Log ("Curve Step " + waveInfo.WaveTrailRenderer.curveStep);
@@ -71,10 +77,11 @@ public class StateHandler : MonoBehaviour
 		}
 		else if (playerState == PlayerState.Disturbed) 
 		{
-			if (waveInfo.WaveTrailRenderer.curveStep < 20) 
+			if (waveInfo.WaveTrailRenderer.curveStep <= 20)
 			{
 				playerState = PlayerState.AnEnd;
 				updateStateEvent.Invoke (playerState, previousState);
+				endTimer = 0;
 			}
 		}
 
@@ -109,5 +116,9 @@ public class StateHandler : MonoBehaviour
 				updateStateEvent.Invoke (playerState, previousState);
 			}
 		}
+//		if (playerState == PlayerState.AnEnd) {
+//			playerState = PlayerState.Beginnings;
+//			updateStateEvent.Invoke (playerState, previousState);
+//		}
 	}
 }

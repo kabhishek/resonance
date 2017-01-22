@@ -67,8 +67,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stateHandler: {fileID: 114150628102592652}
-  collisionInfo: {fileID: 0}
   canvasStory: {fileID: 0}
+  canvasObjective: {fileID: 0}
 --- !u!114 &114856369614090700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -80,4 +80,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a5080fb587c14dc48f966008b3e7e6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lonelytime: 2
+  lonelytime: 10
+  exploreCount: 3
+  timeToEnd: 0

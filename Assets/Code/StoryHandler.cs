@@ -57,9 +57,9 @@ public class StoryHandler : MonoBehaviour {
 				story = "Now you are disturbed " + playerState.ToString ();
 			}
 			break;
-		case PlayerState.AnEnd:
+		case PlayerState.LonelyEnd:
 			{
-				story = "It's sad to leave, this is the end " + playerState.ToString ();
+				story = "You have missunderstood her " + playerState.ToString ();
 			}
 			break;
 		}
