@@ -23,12 +23,5 @@ public class playerMovement : MonoBehaviour/*, IMovement*/ {
 			// Particle goes down
 			transform.Translate (-Vector2.up * speed * Time.deltaTime);
 		}
-
-		// THIS IS A TEST. REMOVE WHEN ADDED TO COLLIDER
-		if (Input.GetKey (KeyCode.B)) {
-			
-			canvasStory.SetActive(true);
-			GameObject.FindGameObjectWithTag ("StoryText").GetComponent<Text> ().text = "Lalal";
-		}
 	}
 }

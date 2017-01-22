@@ -14,7 +14,7 @@ public class Freeze : MonoBehaviour {
 
 	void Update() {
 		if (gameObject.activeSelf) {
-			if (Input.anyKey) {
+			if (!Input.GetKey (KeyCode.Return)) {
 				// close story
 				gameObject.SetActive(false);
 			}
