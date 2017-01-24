@@ -69,6 +69,7 @@ MonoBehaviour:
   stateHandler: {fileID: 114150628102592652}
   canvasStory: {fileID: 0}
   canvasObjective: {fileID: 0}
+  storyData: {fileID: 114856369614090700}
 --- !u!114 &114856369614090700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,3 +84,4 @@ MonoBehaviour:
   lonelytime: 20
   exploreCount: 5
   timeToEnd: 0
+  delayToDisplayStory: 0.65

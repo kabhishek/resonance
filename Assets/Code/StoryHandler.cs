@@ -8,6 +8,7 @@ public class StoryHandler : MonoBehaviour {
 	[SerializeField] private StateHandler stateHandler;
 	[SerializeField] private GameObject canvasStory;
 	[SerializeField] private GameObject canvasObjective;
+	[SerializeField] private StoryData storyData;
 
 	private Color bgColor;
 	private Color particleColor;
@@ -15,7 +16,7 @@ public class StoryHandler : MonoBehaviour {
 	// Use this for initialization
 	void Awake ()
 	{
-		stateHandler.updateStateEvent.AddListener (UpdateStory);
+		stateHandler.updateStateEvent.AddListener (DelayedStoryUpdate);
 	}
 	// Use this for initialization
 	void Start () {
@@ -26,6 +27,18 @@ public class StoryHandler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	IEnumerator DelayUpdateStory(PlayerState playerState, PlayerState previousState)
+	{
+		yield return new WaitForSecondsRealtime (storyData.delayToDisplayStory);
+		UpdateStory (playerState, previousState);
+
+	}
+
+	private void DelayedStoryUpdate(PlayerState playerState, PlayerState previousState)
+	{
+		StartCoroutine (DelayUpdateStory (playerState, previousState));
 	}
 
 	private void UpdateStory(PlayerState playerState, PlayerState previousState)
