@@ -48,9 +48,6 @@ public class StateHandler : MonoBehaviour
 	{
 		Debug.Log ("UpdateState");
 		float curveStep = omega * 10.0f;
-//		if (playerState != PlayerState.Beginnings && previousState == playerState)
-//			return;
-		// state handling
 		if (waveInfo != null) {
 			waveInfo.WaveTrailRenderer.curveStep += curveStep;
 			waveInfo.WaveTrailRenderer.curveStep = Mathf.Min (Mathf.Abs(waveInfo.WaveTrailRenderer.curveStep), 40f);
@@ -91,18 +88,6 @@ public class StateHandler : MonoBehaviour
 				endTimer = 0;
 			}
 		}
-
-		// Post state handling
-//		previousState = playerState;
-//		switch (playerState) 
-//		{
-//			case PlayerState.Beginnings:
-//			{
-//				playerState = PlayerState.Lonely;
-//				lonelyStatetimer = 0;
-//			}
-//			break;
-//		}
 	}
 
 	private void Update()
@@ -123,9 +108,5 @@ public class StateHandler : MonoBehaviour
 				updateStateEvent.Invoke (playerState, previousState);
 			}
 		}
-//		if (playerState == PlayerState.AnEnd) {
-//			playerState = PlayerState.Beginnings;
-//			updateStateEvent.Invoke (playerState, previousState);
-//		}
 	}
 }
