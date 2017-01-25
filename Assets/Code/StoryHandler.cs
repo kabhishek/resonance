@@ -61,7 +61,7 @@ public class StoryHandler : MonoBehaviour {
 		case PlayerState.Exploring:
 			{
 				story_possibilities[0] = "Them:\n“These are cautiously pleated waves\nof us, of you.\nShall we?\nAs we resonate”\n\n\nShe meets, many a different waves\nAs she flows like a river";
-				story_possibilities [1] = "Yesterdays continued to intertwine\nmoving along each other\nGravely.\n\nThreads carrying whiffs and shadows\nlingered in a loci\n\nShe meets, many a different waves\n flowing like a river";
+				story_possibilities [1] = "Yesterdays continued to intertwine\nmoving along each other\nGravely.\n\n. Threads carrying whiffs and shadows\nlingered in a loci\n\nShe meets, many a different waves\n flowing like a river";
 				objective = "She meets, many a different waves, flowing like a river";
 			}
 			break;
