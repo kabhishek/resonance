@@ -87,8 +87,8 @@ public class StoryHandler : MonoBehaviour {
 			break;
 		case PlayerState.LonelyEnd:
 			{
-				story_possibilities[0] = "You have missunderstood her\n\nGAME OVER";
-				story_possibilities [1] = "You have missunderstood her\n\nGAME OVER";
+				story_possibilities[0] = "You misunderstood her\n\nGAME OVER";
+				story_possibilities [1] = "You misunderstood her\n\nGAME OVER";
 			}
 			break;
 		default:
