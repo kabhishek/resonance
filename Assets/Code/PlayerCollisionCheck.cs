@@ -28,7 +28,6 @@ public class PlayerCollisionCheck : MonoBehaviour, IWaveInfo, ICollisionInfo {
 
 	private void OnTriggerEnter2D(Collider2D collider2D)
 	{
-		Debug.Log ("Change Wave!!");
 		float omega = collider2D.gameObject.GetComponent<NPC>().omega;
 		collider2D.gameObject.SetActive (false);
 		playerCollision.Invoke(omega, this);

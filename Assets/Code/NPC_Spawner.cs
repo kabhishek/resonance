@@ -26,7 +26,7 @@ public class NPC_Spawner : MonoBehaviour {
 //		Debug.Log ("Spawn World Pos" + spawnPositionInWorld);
 	  	GameObject local = GameObject.Instantiate<GameObject> (npcPrefab, spawnPositionInWorld, Quaternion.identity);
 		NPC npc = local.GetComponent<NPC> ();
-		int[] omegas = new int[] { 1, 3, -1, -3, 5, -5, 0};
+		int[] omegas = new int[] { 0, 1, -1, 1, -1, 2, -2, 2, -2, 3, -3, 3, -3, 5, -5, 0};
 //		int[] omegas = new int[] { 0, 0, 0, 0, 0};
 		//float[] omegas = new float[] { 100f };
 		npc.omega = omegas[Random.Range(0, omegas.Length - 1)];
