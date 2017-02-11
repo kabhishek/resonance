@@ -8,6 +8,7 @@ public class playerMovement : MonoBehaviour/*, IMovement*/ {
 
 	public float speed;
 	public GameObject canvasStory;
+     private float UIPanelWidth = 40f;
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +19,7 @@ public class playerMovement : MonoBehaviour/*, IMovement*/ {
 
           if (Input.GetKey (KeyCode.UpArrow) || Input.GetKey (KeyCode.W)) {
                Vector2 screenPosition = Camera.main.WorldToScreenPoint (transform.position + Vector3.up * speed * Time.deltaTime);
-               if (screenPosition.y > Screen.height - 40)
+               if (screenPosition.y > Screen.height - UIPanelWidth)
                     return;
                // Particle goes up
 			transform.Translate (Vector2.up * speed * Time.deltaTime);
